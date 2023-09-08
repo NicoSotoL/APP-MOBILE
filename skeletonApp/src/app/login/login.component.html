@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>BIENVENIDO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-text-center">
+        <img src="assets/logo.png" alt="Logo">
+        <ion-title [@titleAnimation]="titleState" (@titleAnimation.done)="animateTitle()" class="animacion texto-animado">INICIA SESIÓN</ion-title>
+    </div>
+    
+
+  <div class="ion-text-center">
+    <ion-list>
+          <ion-input 
+              type="text" 
+              [(ngModel)]="user.usuario" 
+              (ionClear)="onInputCleared()" 
+              [@shakeAnimation]="shakeState" 
+              placeholder="Usuario"
+              class="input-fondo">
+          </ion-input>
+
+          <ion-input 
+              type="password" 
+              [(ngModel)]="user.password" 
+              (ionClear)="onInputCleared()" 
+              [@shakeAnimation]="shakeState" 
+              placeholder="Contraseña"
+              class="input-fondo">
+          </ion-input>
+      </ion-list>
+      <ion-button expand="block" (click)="autenticar()">Ingresar</ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="ion-text-center">
+      <p>&copy; 2023 WJAJAJ. Todos los derechos reservados.</p>
+      <a href="/">Inicio</a> | 
+      <a href="https://experienciavivo.duoc.cl/index">Contacto</a>
+  </div>
+</ion-footer>
